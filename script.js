@@ -4,28 +4,32 @@ const cabinets = {
         name: 'شبرا الخيمة 1',
         location: 'shobra_kheima',
         data: [
-            [0, 16, 18, 19, 20, 21, 22, 23, 24],
-            [25, 0, 27, 28, 29, 0, 31, 32, 33, 34],
-            [35, 36, 37, 38, 39, 40, 41, 42, 43, 44],
-            [45, 46, 47, 48, 49, 50, 51, 52, 53, 54],
-            [55, 56, 57, 58, 59, 60, 61, 62, 63, 64],
-            [65, 66, 67, 68, 69, 70, 71, 72, 73, 74],
-            [75, 76, 77, 78, 79, 80, 81, 82, 83, 84],
-            [85, 86, 87, 88, 89, 90, 91, 92, 93, 94]
+            [0,16,0,18,19,20,21,22,23,24],
+            [25,0,27,28,29,0,31,32,33,34],
+            [35,36,37,38,39,0,0,0,43,44],
+            [45,0,0,0,49,0,51,52,53,54],
+            [55,56,57,58,0,0,0,0,0,0],
+            [65,66,0,68,0,282,296,295,73,74,75],
+            [0,0,0,79,91,92,93,94,95,96],
+            [97,98,99,100,101,102,103,104,105,106],
+            [107,108,109,110,111,112,113,114,115,116],
+            [117,118,119,120,121,122,123,124,125]
         ]
     },
     'شبرا الخيمة 2': {
         name: 'شبرا الخيمة 2',
         location: 'shobra_kheima',
         data: [
-            [95, 96, 97, 98, 99, 100, 101, 102, 103],
-            [104, 105, 106, 107, 108, 109, 110, 111, 112],
-            [113, 114, 115, 116, 117, 118, 119, 120, 121],
-            [122, 123, 124, 125, 126, 127, 128, 129, 130],
-            [131, 132, 133, 134, 135, 136, 137, 138, 139],
-            [140, 141, 142, 143, 144, 145, 146, 147, 148],
-            [149, 150, 151, 152, 153, 154, 155, 156, 157],
-            [158, 159, 160, 161, 162, 163, 164, 165, 166]
+            [126,127,128,129,130,131,132,133,134,135],
+            [136,137,138,139,140,141,142,143,144,145],
+            [146,,147,148,149,150,0,152,153,154,155],
+            [156,163,185,283,285,203,204,0,206,207],
+            [208,209,210,211,212,213,214,215,216,217],
+            [218,219,0,221,222,223,224,225,226,227],
+            [228,229,230,231,232,233,234,235,236,237],
+            [238,280,240,241,242,243,269,245,284,266],
+            [268,281,250,251,252,253,254,255,275,257],
+            [291,262,277,278,265,270,267,273,272,276]
         ]
     },
     'بيجام 1': {
@@ -113,12 +117,19 @@ function setupLocationSelection() {
     const locationOptions = document.querySelectorAll('.location-option');
     
     locationOptions.forEach(option => {
-        option.addEventListener('click', function() {
+        option.addEventListener('click', function(e) {
             const location = this.dataset.location;
+            
+            // لو الموقع اسمه we → ما يعملش أي حاجة
+            if (location === "we") {
+                e.preventDefault();
+                return;
+            }
+
             selectLocation(location);
         });
         
-        // Add hover sound effect (optional)
+        // Hover animation
         option.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-4px) scale(1.02)';
         });
@@ -128,6 +139,7 @@ function setupLocationSelection() {
         });
     });
 }
+
 
 // Select a location and show relevant cabinets
 function selectLocation(location) {
@@ -191,9 +203,6 @@ function createCabinetElement(cabinet) {
     const cabinetDiv = document.createElement('div');
     cabinetDiv.className = 'cabinet-card';
     
-    // Calculate grid columns based on the maximum row length
-    const maxColumns = Math.max(...cabinet.data.map(row => row.length));
-    
     // Count total keys (excluding empty slots)
     const totalKeys = cabinet.data.flat().filter(key => key !== 0).length;
     
@@ -213,15 +222,55 @@ function createCabinetElement(cabinet) {
                 <span class="status-text">جاهز</span>
             </div>
         </div>
-        <div class="cabinet-grid" style="grid-template-columns: repeat(${maxColumns}, 1fr);">
-            ${generateKeySlots(cabinet.data, cabinet.name)}
+        <div class="cabinet-container">
+            ${generateCabinetRows(cabinet.data, cabinet.name)}
         </div>
     `;
     
     return cabinetDiv;
 }
 
-// Generate key slots for a cabinet with enhanced styling
+// Generate cabinet rows with individual grid layouts
+function generateCabinetRows(data, cabinetName) {
+    let rowsHTML = '';
+    
+    data.forEach((row, rowIndex) => {
+        const columnsCount = row.length;
+        rowsHTML += `
+            <div class="cabinet-row" style="grid-template-columns: repeat(${columnsCount}, 1fr);">
+                ${generateRowSlots(row, rowIndex, cabinetName)}
+            </div>
+        `;
+    });
+    
+    return rowsHTML;
+}
+
+// Generate key slots for a single row
+function generateRowSlots(row, rowIndex, cabinetName) {
+    let slotsHTML = '';
+    
+    row.forEach((keyNumber, colIndex) => {
+        const isEmpty = keyNumber === 0;
+        const isHighlighted = highlightedKeys.has(keyNumber);
+        const isNotFound = notFoundKeys.has(keyNumber);
+        
+        slotsHTML += `
+            <div class="key-slot ${isEmpty ? 'empty' : ''} ${isHighlighted ? 'highlighted' : ''} ${isNotFound ? 'not-found' : ''}" 
+                 data-key="${keyNumber}" 
+                 data-cabinet="${cabinetName}"
+                 data-row="${rowIndex}" 
+                 data-col="${colIndex}"
+                 title="${isEmpty ? 'مكان فارغ' : `مفتاح رقم ${keyNumber}`}">
+                ${isEmpty ? '-' : keyNumber}
+            </div>
+        `;
+    });
+    
+    return slotsHTML;
+}
+
+// Generate key slots for a cabinet with enhanced styling (legacy function - kept for compatibility)
 function generateKeySlots(data, cabinetName) {
     let slotsHTML = '';
     
