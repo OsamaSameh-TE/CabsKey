@@ -36,46 +36,63 @@ const cabinets = {
         name: 'بيجام 1',
         location: 'bigam',
         data: [
-            [167, 168, 169, 170, 171, 172, 173, 174],
-            [175, 176, 177, 178, 179, 180, 181, 182],
-            [183, 184, 185, 186, 187, 188, 189, 190],
-            [191, 192, 193, 194, 195, 196, 197, 198],
-            [199, 200, 201, 202, 203, 204, 205, 206],
-            [207, 208, 209, 210, 211, 212, 213, 214]
+            [175,178,177,"08-04","08-05",180,181,182,"08-06",184],
+            [185,186,187,188,1,2,0,4,5,6],
+            [7,0,0,0,11,12,13,14,15,16],
+            [17,18,19,0,21,22,23,0,25,26],
+            [27,28,29,0,0,32,33,34,35,0],
+            [37,38,39,40,0,42,43,44,45,46],
+            [47,48,49,50,51,52,53,54,55,56],
+            [57,58,0,60,0,0,0,0,65,66],
+            [67,68,69,70,71,72,73,74,75,76],
+            [77,78,79,80,81,82,83,84,85,86]
         ]
     },
     'بيجام 2': {
         name: 'بيجام 2',
         location: 'bigam',
         data: [
-            [215, 216, 217, 218, 219, 220, 221, 222],
-            [223, 224, 225, 226, 227, 228, 229, 230],
-            [231, 232, 233, 234, 235, 236, 237, 238],
-            [239, 240, 241, 242, 243, 244, 245, 246],
-            [247, 248, 249, 250, 251, 252, 253, 254],
-            [255, 256, 257, 258, 259, 260, 261, 262]
+            [87, 88, 89, 90, 91, 92, 93, 94, 95, 96],
+            [97, 98, 99, 100, 101, 102, 103, 0, 105, 106],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 150, 181, 163, 140, 154, 155, 160, 161, 156],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 
         ]
     },
     'بهتيم': {
         name: 'بهتيم',
         location: 'bahteem',
         data: [
-            [263, 264, 265, 266, 267, 268, 269],
-            [270, 271, 272, 273, 274, 275, 276],
-            [277, 278, 279, 280, 281, 282, 283],
-            [284, 285, 286, 287, 288, 289, 290],
-            [291, 292, 293, 294, 295, 296, 297]
+            [1, 2, 3, 4, 0, 0, 0, 8, 9, 10],
+    [11, 12, 13, 14, 0, 16, 0, 18, 19, 20],
+    [21, 22, 23, 24, 25, 26, 0, 29, 30, 0],
+    [31, 32, 33, 34, 35, 36, 37, 38, 39, 40],
+    [41, 42, 43, 44, 45, 46, 47, 0, 0, 0],
+    [0, 0, 53, 54, 55, 56, 57, 0, 0, 60],
+    [61, 62, 63, 0, 65, 66, 67, 68, 69, 70],
+    [71, 72, 73, 74, 75, 76, 77, 78, 0, 80],
+    [0, 0, 95, 0, 85, 0, 0, 90, 97, 100]
         ]
     },
     'شبرا 3': {
         name: 'شبرا 3',
         location: 'shobra3',
         data: [
-            [298, 299, 300, 301, 302, 303, 304],
-            [305, 306, 307, 308, 309, 310, 311],
-            [312, 313, 314, 315, 316, 317, 318],
-            [319, 320, 321, 322, 323, 324, 325],
-            [326, 327, 328, 329, 330, 331, 332]
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    [12, 13, 14, 15, 0, 17, 18, 19, 20, 21],
+    [25, 26, 27, 28, 29, 30, 31, 32, 33],
+    [34, 35, 36, 37, 38, 39, 40, 41, 42, 43],
+    [44, 45, 46, 0, 0, 0, 0, 0, 52, 53],
+    [0, 55, 56, 0, 0, 0, 60, 61, 62],
+    [63, 64, 65, 66, 67, 68, 69, 70, 0],
+    [72, 73, 74, 75, 76, 77, 78, 79, 80],
+    [0, 0, 0, 0, 85, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         ]
     }
 };
@@ -120,7 +137,6 @@ function setupLocationSelection() {
         option.addEventListener('click', function(e) {
             const location = this.dataset.location;
             
-            // لو الموقع اسمه we → ما يعملش أي حاجة
             if (location === "we") {
                 e.preventDefault();
                 return;
@@ -129,7 +145,6 @@ function setupLocationSelection() {
             selectLocation(location);
         });
         
-        // Hover animation
         option.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-4px) scale(1.02)';
         });
@@ -140,28 +155,21 @@ function setupLocationSelection() {
     });
 }
 
-
 // Select a location and show relevant cabinets
 function selectLocation(location) {
     currentLocation = location;
     
-    // Update UI
     locationSection.style.display = 'none';
     searchSection.style.display = 'block';
     cabinetsGrid.style.display = 'grid';
     
-    // Update breadcrumb
     selectedLocationName.textContent = locationNames[location];
-    
-    // Generate cabinets for selected location
     generateCabinetsForLocation(location);
     
-    // Focus on search input
     setTimeout(() => {
         searchInput.focus();
     }, 300);
     
-    // Show success notification
     showNotification(`تم اختيار موقع: ${locationNames[location]}`, 'success');
 }
 
@@ -169,13 +177,11 @@ function selectLocation(location) {
 function generateCabinetsForLocation(location) {
     cabinetsGrid.innerHTML = '';
     
-    // Filter cabinets by location
     const locationCabinets = Object.values(cabinets).filter(cabinet => 
         cabinet.location === location
     );
     
     if (locationCabinets.length === 0) {
-        // Show message for locations without cabinets (like central)
         cabinetsGrid.innerHTML = `
             <div class="no-cabinets-message">
                 <div class="no-cabinets-card">
@@ -198,12 +204,11 @@ function generateCabinetsForLocation(location) {
     });
 }
 
-// Create a single cabinet element with enhanced design
+// Create a single cabinet element
 function createCabinetElement(cabinet) {
     const cabinetDiv = document.createElement('div');
     cabinetDiv.className = 'cabinet-card';
     
-    // Count total keys (excluding empty slots)
     const totalKeys = cabinet.data.flat().filter(key => key !== 0).length;
     
     cabinetDiv.innerHTML = `
@@ -230,7 +235,7 @@ function createCabinetElement(cabinet) {
     return cabinetDiv;
 }
 
-// Generate cabinet rows with individual grid layouts
+// Generate cabinet rows
 function generateCabinetRows(data, cabinetName) {
     let rowsHTML = '';
     
@@ -246,7 +251,7 @@ function generateCabinetRows(data, cabinetName) {
     return rowsHTML;
 }
 
-// Generate key slots for a single row
+// Generate key slots
 function generateRowSlots(row, rowIndex, cabinetName) {
     let slotsHTML = '';
     
@@ -270,46 +275,18 @@ function generateRowSlots(row, rowIndex, cabinetName) {
     return slotsHTML;
 }
 
-// Generate key slots for a cabinet with enhanced styling (legacy function - kept for compatibility)
-function generateKeySlots(data, cabinetName) {
-    let slotsHTML = '';
-    
-    data.forEach((row, rowIndex) => {
-        row.forEach((keyNumber, colIndex) => {
-            const isEmpty = keyNumber === 0;
-            const isHighlighted = highlightedKeys.has(keyNumber);
-            const isNotFound = notFoundKeys.has(keyNumber);
-            
-            slotsHTML += `
-                <div class="key-slot ${isEmpty ? 'empty' : ''} ${isHighlighted ? 'highlighted' : ''} ${isNotFound ? 'not-found' : ''}" 
-                     data-key="${keyNumber}" 
-                     data-cabinet="${cabinetName}"
-                     data-row="${rowIndex}" 
-                     data-col="${colIndex}"
-                     title="${isEmpty ? 'مكان فارغ' : `مفتاح رقم ${keyNumber}`}">
-                    ${isEmpty ? '-' : keyNumber}
-                </div>
-            `;
-        });
-    });
-    
-    return slotsHTML;
-}
-
 // Setup event listeners
 function setupEventListeners() {
     searchBtn.addEventListener('click', handleSearch);
     clearBtn.addEventListener('click', handleClear);
     backToLocationsBtn.addEventListener('click', backToLocationSelection);
     
-    // Allow search on Enter key
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             handleSearch();
         }
     });
     
-    // Real-time search as user types (with debounce)
     let searchTimeout;
     searchInput.addEventListener('input', function() {
         clearTimeout(searchTimeout);
@@ -323,7 +300,7 @@ function setupEventListeners() {
     });
 }
 
-// Handle search functionality with key validation
+// Handle search
 function handleSearch() {
     const searchValue = searchInput.value.trim();
     
@@ -332,14 +309,11 @@ function handleSearch() {
         return;
     }
     
-    // Show loading state
     const originalText = searchBtn.innerHTML;
     searchBtn.innerHTML = '<div class="loading"></div> جاري البحث...';
     searchBtn.disabled = true;
     
-    // Simulate search delay for better UX
     setTimeout(() => {
-        // Parse key numbers from input
         const keyNumbers = parseKeyNumbers(searchValue);
         
         if (keyNumbers.length === 0) {
@@ -348,19 +322,15 @@ function handleSearch() {
             return;
         }
         
-        // Validate keys and separate found/not found
         const validationResult = validateKeys(keyNumbers);
         
-        // Update highlighted keys and not found keys
         highlightedKeys = new Set(validationResult.found);
         notFoundKeys = new Set(validationResult.notFound);
         
-        // Update UI
         updateCabinetHighlights();
         updateSelectedKeysDisplay();
         updateCabinetStatus();
         
-        // Show appropriate notification
         if (validationResult.notFound.length > 0) {
             showNotification(
                 `تم العثور على ${validationResult.found.length} مفتاح، ${validationResult.notFound.length} مفتاح غير موجود`, 
@@ -374,7 +344,23 @@ function handleSearch() {
     }, 300);
 }
 
-// Validate keys against current location cabinets
+// ✅ Parse key numbers (يدعم النصوص زي 08-04)
+function parseKeyNumbers(input) {
+    return input
+        .split(/[,\s]+/)
+        .map(key => key.trim())
+        .filter(key => key.length > 0)
+        .map(key => {
+            if (key.includes("-")) {
+                return key; // نص زي ما هو
+            }
+            const num = parseInt(key, 10);
+            return isNaN(num) ? null : num;
+        })
+        .filter(key => key !== null);
+}
+
+// Validate keys
 function validateKeys(keyNumbers) {
     const locationCabinets = Object.values(cabinets).filter(cabinet => 
         cabinet.location === currentLocation
@@ -401,54 +387,13 @@ function validateKeys(keyNumbers) {
     return { found, notFound };
 }
 
-// Update cabinet status indicators
-function updateCabinetStatus() {
-    const locationCabinets = Object.values(cabinets).filter(cabinet => 
-        cabinet.location === currentLocation
-    );
-    
-    locationCabinets.forEach(cabinet => {
-        const statusElement = document.getElementById(`status-${cabinet.name.replace(/\s+/g, '-')}`);
-        if (!statusElement) return;
-        
-        const cabinetKeys = cabinet.data.flat().filter(key => key !== 0);
-        const foundInCabinet = cabinetKeys.filter(key => highlightedKeys.has(key));
-        const notFoundInCabinet = cabinetKeys.filter(key => notFoundKeys.has(key));
-        
-        if (foundInCabinet.length > 0) {
-            statusElement.innerHTML = `
-                <span class="status-text found">${foundInCabinet.length} موجود</span>
-            `;
-            statusElement.className = 'cabinet-status active';
-        } else if (notFoundInCabinet.length > 0) {
-            statusElement.innerHTML = `
-                <span class="status-text not-found">غير موجود</span>
-            `;
-            statusElement.className = 'cabinet-status inactive';
-        } else {
-            statusElement.innerHTML = `
-                <span class="status-text">جاهز</span>
-            `;
-            statusElement.className = 'cabinet-status';
-        }
-    });
-}
-
-// Parse key numbers from search input
-function parseKeyNumbers(input) {
-    return input
-        .split(/[,\s]+/)
-        .map(key => parseInt(key.trim()))
-        .filter(key => !isNaN(key) && key > 0);
-}
-
-// Reset search button to original state
+// Reset search button
 function resetSearchButton(originalText) {
     searchBtn.innerHTML = originalText;
     searchBtn.disabled = false;
 }
 
-// Handle clear functionality
+// Handle clear
 function handleClear() {
     searchInput.value = '';
     highlightedKeys.clear();
@@ -469,7 +414,6 @@ function backToLocationSelection() {
     searchSection.style.display = 'none';
     cabinetsGrid.style.display = 'none';
     
-    // Clear search input
     searchInput.value = '';
     hideSelectedKeysDisplay();
     
@@ -481,14 +425,12 @@ function updateCabinetHighlights() {
     const allKeySlots = document.querySelectorAll('.key-slot');
     
     allKeySlots.forEach(slot => {
-        const keyNumber = parseInt(slot.dataset.key);
+        const keyNumber = slot.dataset.key;
         
-        // Remove all highlight classes first
         slot.classList.remove('highlighted', 'not-found');
         
-        if (highlightedKeys.has(keyNumber)) {
+        if (highlightedKeys.has(keyNumber) || highlightedKeys.has(parseInt(keyNumber))) {
             slot.classList.add('highlighted');
-            // Add a small delay for staggered animation
             setTimeout(() => {
                 slot.scrollIntoView({ 
                     behavior: 'smooth', 
@@ -496,13 +438,13 @@ function updateCabinetHighlights() {
                     inline: 'center'
                 });
             }, 100);
-        } else if (notFoundKeys.has(keyNumber)) {
+        } else if (notFoundKeys.has(keyNumber) || notFoundKeys.has(parseInt(keyNumber))) {
             slot.classList.add('not-found');
         }
     });
 }
 
-// Update selected keys display with enhanced styling
+// Update selected keys display
 function updateSelectedKeysDisplay() {
     const totalKeys = highlightedKeys.size + notFoundKeys.size;
     
@@ -511,13 +453,11 @@ function updateSelectedKeysDisplay() {
         return;
     }
     
-    // Sort keys for better display
-    const foundKeys = Array.from(highlightedKeys).sort((a, b) => a - b);
-    const notFoundKeysArray = Array.from(notFoundKeys).sort((a, b) => a - b);
+    const foundKeys = Array.from(highlightedKeys);
+    const notFoundKeysArray = Array.from(notFoundKeys);
     
     let badgesHTML = '';
     
-    // Add found keys
     foundKeys.forEach(key => {
         badgesHTML += `
             <div class="key-badge found">
@@ -529,13 +469,11 @@ function updateSelectedKeysDisplay() {
         `;
     });
     
-    // Add not found keys
     notFoundKeysArray.forEach(key => {
         badgesHTML += `
             <div class="key-badge not-found">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                    <path d="M18 6L6 18M6 6l12 12"></path>
                 </svg>
                 ${key}
             </div>
@@ -552,145 +490,58 @@ function hideSelectedKeysDisplay() {
     keyBadgesContainer.innerHTML = '';
 }
 
-// Show notification with enhanced styling
+// Update cabinet status
+function updateCabinetStatus() {
+    const locationCabinets = Object.values(cabinets).filter(cabinet => 
+        cabinet.location === currentLocation
+    );
+    
+    locationCabinets.forEach(cabinet => {
+        const cabinetStatus = document.getElementById(`status-${cabinet.name.replace(/\s+/g, '-')}`);
+        
+        if (!cabinetStatus) return;
+        
+        if (highlightedKeys.size > 0) {
+            const foundInCabinet = cabinet.data.flat().filter(key => highlightedKeys.has(key)).length;
+            
+            if (foundInCabinet > 0) {
+                cabinetStatus.innerHTML = `
+                    <span class="status-text success">تم العثور</span>
+                `;
+            } else {
+                cabinetStatus.innerHTML = `
+                    <span class="status-text">جاهز</span>
+                `;
+            }
+        } else {
+            cabinetStatus.innerHTML = `
+                <span class="status-text">جاهز</span>
+            `;
+        }
+    });
+}
+
+// Show notification
 function showNotification(message, type = 'info') {
-    // Remove existing notifications
-    const existingNotifications = document.querySelectorAll('.notification');
-    existingNotifications.forEach(notification => notification.remove());
-    
     const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    
-    const colors = {
-        success: '#10b981',
-        error: '#ef4444',
-        warning: '#f59e0b',
-        info: '#3b82f6'
-    };
-    
-    const icons = {
-        success: '<path d="M20 6L9 17l-5-5"></path>',
-        error: '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>',
-        warning: '<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line>',
-        info: '<circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line>'
-    };
-    
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${colors[type]};
-        color: white;
-        padding: 12px 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        z-index: 1000;
-        font-weight: 500;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        max-width: 300px;
-    `;
+    notification.className = `notification ${type}`;
     
     notification.innerHTML = `
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            ${icons[type]}
-        </svg>
-        ${message}
+        <div class="notification-content">
+            ${message}
+        </div>
     `;
     
     document.body.appendChild(notification);
     
-    // Animate in
     setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 10);
+        notification.classList.add('show');
+    }, 100);
     
-    // Auto remove after 4 seconds
     setTimeout(() => {
-        notification.style.transform = 'translateX(100%)';
+        notification.classList.remove('show');
         setTimeout(() => {
-            if (notification.parentNode) {
-                notification.remove();
-            }
+            notification.remove();
         }, 300);
-    }, 4000);
+    }, 3000);
 }
-
-// Add keyboard shortcuts
-document.addEventListener('keydown', function(e) {
-    // Ctrl/Cmd + K to focus search
-    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-        e.preventDefault();
-        if (currentLocation) {
-            searchInput.focus();
-            searchInput.select();
-        }
-    }
-    
-    // Escape to clear search or go back
-    if (e.key === 'Escape') {
-        if (currentLocation) {
-            if (searchInput.value.trim()) {
-                handleClear();
-            } else {
-                backToLocationSelection();
-            }
-        }
-        searchInput.blur();
-    }
-});
-
-// Add click handlers for key slots (for additional interactivity)
-document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('key-slot') && !e.target.classList.contains('empty')) {
-        const keyNumber = parseInt(e.target.dataset.key);
-        
-        if (highlightedKeys.has(keyNumber)) {
-            // Remove from highlights
-            highlightedKeys.delete(keyNumber);
-        } else {
-            // Add to highlights
-            highlightedKeys.add(keyNumber);
-            // Remove from not found if it was there
-            notFoundKeys.delete(keyNumber);
-        }
-        
-        // Update search input
-        const allSelectedKeys = [...highlightedKeys, ...notFoundKeys];
-        searchInput.value = allSelectedKeys.sort((a, b) => a - b).join(', ');
-        
-        // Update UI
-        updateCabinetHighlights();
-        updateSelectedKeysDisplay();
-        updateCabinetStatus();
-    }
-});
-
-// Add touch support for mobile devices
-let touchStartTime = 0;
-document.addEventListener('touchstart', function(e) {
-    touchStartTime = Date.now();
-});
-
-document.addEventListener('touchend', function(e) {
-    const touchDuration = Date.now() - touchStartTime;
-    
-    // Only trigger click if it's a quick tap (not a scroll)
-    if (touchDuration < 200 && e.target.classList.contains('key-slot')) {
-        e.target.click();
-    }
-});
-
-// Performance optimization: Debounce resize events
-let resizeTimeout;
-window.addEventListener('resize', function() {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-        // Recalculate layouts if needed
-        updateCabinetHighlights();
-    }, 250);
-});
-
