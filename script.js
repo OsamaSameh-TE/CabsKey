@@ -1,4 +1,3 @@
-// Cabinet data configuration with location mapping
 const cabinets = {
     'شبرا الخيمة 1': {
         name: 'شبرا الخيمة 1',
