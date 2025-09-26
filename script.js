@@ -1,3 +1,4 @@
+// Cabinet data configuration with location mapping
 const cabinets = {
     'شبرا الخيمة 1': {
         name: 'شبرا الخيمة 1',
@@ -52,7 +53,7 @@ const cabinets = {
         location: 'bigam',
         data: [
             [87, 88, 89, 90, 91, 92, 93, 94, 95, 96],
-            [97, 98, 99, 100, 101, 102, 103, 0, 105, 106],
+            [97, 99, 99, 100, 101, 102, 103, 0, 105, 106],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 150, 181, 163, 140, 154, 155, 160, 161, 156],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -68,33 +69,86 @@ const cabinets = {
         location: 'bahteem',
         data: [
             [1, 2, 3, 4, 0, 0, 0, 8, 9, 10],
-    [11, 12, 13, 14, 0, 16, 0, 18, 19, 20],
-    [21, 22, 23, 24, 25, 26, 0, 29, 30, 0],
-    [31, 32, 33, 34, 35, 36, 37, 38, 39, 40],
-    [41, 42, 43, 44, 45, 46, 47, 0, 0, 0],
-    [0, 0, 53, 54, 55, 56, 57, 0, 0, 60],
-    [61, 62, 63, 0, 65, 66, 67, 68, 69, 70],
-    [71, 72, 73, 74, 75, 76, 77, 78, 0, 80],
-    [0, 0, 95, 0, 85, 0, 0, 90, 97, 100]
+            [11, 12, 13, 14, 0, 16, 0, 18, 19, 20],
+            [21, 22, 23, 24, 25, 26, 0, 29, 30, 0],
+            [31, 32, 33, 34, 35, 36, 37, 38, 39, 40],
+            [41, 42, 43, 44, 45, 46, 47, 0, 0, 0],
+            [0, 0, 53, 54, 55, 56, 57, 0, 0, 60],
+            [61, 62, 63, 0, 65, 66, 67, 68, 69, 70],
+            [71, 72, 73, 74, 75, 76, 77, 78, 0, 80],
+            [0, 0, 95, 0, 85, 0, 0, 90, 97, 100]
         ]
     },
     'شبرا 3': {
         name: 'شبرا 3',
         location: 'shobra3',
         data: [
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    [12, 13, 14, 15, 0, 17, 18, 19, 20, 21],
-    [25, 26, 27, 28, 29, 30, 31, 32, 33],
-    [34, 35, 36, 37, 38, 39, 40, 41, 42, 43],
-    [44, 45, 46, 0, 0, 0, 0, 0, 52, 53],
-    [0, 55, 56, 0, 0, 0, 60, 61, 62],
-    [63, 64, 65, 66, 67, 68, 69, 70, 0],
-    [72, 73, 74, 75, 76, 77, 78, 79, 80],
-    [0, 0, 0, 0, 85, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+            [12, 13, 14, 15, 0, 17, 18, 19, 20, 21],
+            [25, 26, 27, 28, 29, 30, 31, 32, 33],
+            [34, 35, 36, 37, 38, 39, 40, 41, 42, 43],
+            [44, 45, 46, 0, 0, 0, 0, 0, 52, 53],
+            [0, 55, 56, 0, 0, 0, 60, 61, 62],
+            [63, 64, 65, 66, 67, 68, 69, 70, 0],
+            [72, 73, 74, 75, 76, 77, 78, 79, 80],
+            [0, 0, 0, 0, 85, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         ]
     }
 };
+
+const cabinetDetails = {
+    'شبرا الخيمة 1-16': {
+        'fullCode': '02-1-08-16',
+        'vendor': 'Huawei',
+        'model': 'MA5600T',
+        'lon': '30.1161',
+        'lat': '31.27246',
+        'address': 'ترعة الشابورى بجوار سور عثمان'
+    },
+    'شبرا الخيمة 1-18': {
+        'fullCode': 'SK1-A2',
+        'vendor': 'ZTE',
+        'model': 'C300',
+        'lon': '31.2570',
+        'lat': '30.0791',
+        'address': 'Cairo, Shobra Al-Kheima 1'
+    },
+    'بيجام 1-16': {
+        'fullCode': 'BGM1-B1',
+        'vendor': 'Nokia',
+        'model': '7360 FX-4',
+        'lon': '31.2200',
+        'lat': '30.0500',
+        'address': 'Cairo, Bigam'
+    },
+    'بيجام 1-18': {
+        'fullCode': 'BGM1-B2',
+        'vendor': 'Ericsson',
+        'model': 'DSLAM',
+        'lon': '31.2210',
+        'lat': '30.0510',
+        'address': 'Cairo, Bigam'
+    },
+    'بهتيم-16': {
+        'fullCode': 'BHTM-C1',
+        'vendor': 'Cisco',
+        'model': 'Catalyst',
+        'lon': '31.2800',
+        'lat': '30.0900',
+        'address': 'Qalyubia, Bahteem'
+    },
+    'شبرا 3-16': {
+        'fullCode': 'SH3-D1',
+        'vendor': 'Huawei',
+        'model': 'MA5800',
+        'lon': '31.3000',
+        'lat': '30.1200',
+        'address': 'Cairo, Shobra 3'
+    },
+    // Add more unique details here for each key in each cabinet
+};
+
 
 // Location names mapping
 const locationNames = {
@@ -121,6 +175,11 @@ const selectedKeysSection = document.getElementById('selectedKeys');
 const keyBadgesContainer = document.getElementById('keyBadges');
 const backToLocationsBtn = document.getElementById('backToLocations');
 const selectedLocationName = document.getElementById('selectedLocationName');
+const exportExcelBtn = document.getElementById('exportExcelBtn');
+const detailsModal = document.getElementById('detailsModal');
+const closeBtn = document.querySelector('.close-btn');
+const modalDetailsBody = document.getElementById('modalDetailsBody');
+
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
@@ -230,9 +289,52 @@ function createCabinetElement(cabinet) {
             ${generateCabinetRows(cabinet.data, cabinet.name)}
         </div>
     `;
-    
+
     return cabinetDiv;
 }
+
+// New function to show cabinet details in a modal
+function showCabinetDetailsModal(cabinetName, keyNumber) {
+    const key = `${cabinetName}-${keyNumber}`;
+    const details = cabinetDetails[key];
+
+    if (!details) {
+        modalDetailsBody.innerHTML = `
+            <h3>No details available</h3>
+            <p>No additional details available for this key  at the moment.</p>
+        `;
+    } else {
+        // Correct GPS link format for Google Maps
+        const gpsLink = `https://www.google.com/maps/place/${details.lat},${details.lon}`;
+        
+        const detailsHTML = `
+            <h3>Details for Key ${keyNumber} in ${cabinetName}</h3>
+            <p><strong>Full Code:</strong> ${details.fullCode}</p>
+            <p><strong>Vendor:</strong> ${details.vendor}</p>
+            <p><strong>Model:</strong> ${details.model}</p>
+            <p><strong>Longitude:</strong> ${details.lon}</p>
+            <p><strong>Latitude:</strong> ${details.lat}</p>
+            <p><strong>Address:</strong> ${details.address}</p>
+            <p><a href="${gpsLink}" target="_blank" class="gps-link">Open Location on Google Maps</a></p>
+        `;
+        modalDetailsBody.innerHTML = detailsHTML;
+    }
+    
+    detailsModal.style.display = 'block';
+}
+
+// Close the modal when the close button is clicked
+closeBtn.addEventListener('click', () => {
+    detailsModal.style.display = 'none';
+});
+
+// Close the modal when the user clicks anywhere outside of the modal
+window.addEventListener('click', (event) => {
+    if (event.target === detailsModal) {
+        detailsModal.style.display = 'none';
+    }
+});
+
 
 // Generate cabinet rows
 function generateCabinetRows(data, cabinetName) {
@@ -258,9 +360,12 @@ function generateRowSlots(row, rowIndex, cabinetName) {
         const isEmpty = keyNumber === 0;
         const isHighlighted = highlightedKeys.has(keyNumber);
         const isNotFound = notFoundKeys.has(keyNumber);
-        
+
+        const key = `${cabinetName}-${keyNumber}`;
+        const hasDetails = !!cabinetDetails[key];
+
         slotsHTML += `
-            <div class="key-slot ${isEmpty ? 'empty' : ''} ${isHighlighted ? 'highlighted' : ''} ${isNotFound ? 'not-found' : ''}" 
+            <div class="key-slot ${isEmpty ? 'empty' : ''} ${isHighlighted ? 'highlighted' : ''} ${isNotFound ? 'not-found' : ''} ${hasDetails ? 'has-details' : ''}" 
                  data-key="${keyNumber}" 
                  data-cabinet="${cabinetName}"
                  data-row="${rowIndex}" 
@@ -274,11 +379,104 @@ function generateRowSlots(row, rowIndex, cabinetName) {
     return slotsHTML;
 }
 
+// New function to export data to Excel
+function exportToExcel() {
+    const keysToExport = Array.from(highlightedKeys);
+    
+    if (keysToExport.length === 0) {
+        showNotification('برجاء تحديد مفاتيح أولاً', 'error');
+        return;
+    }
+    
+    const data = [];
+    const headers = ["Msan Code", "Vendor", "Model", "Long", "Lat", "Location", "GPS"];
+    data.push(headers);
+    
+    keysToExport.forEach(keyNumber => {
+        const keySlot = document.querySelector(`.key-slot[data-key="${keyNumber}"].highlighted`);
+        if (!keySlot) return; // Skip if element is not found
+        
+        const cabinetName = keySlot.dataset.cabinet;
+        const key = `${cabinetName}-${keyNumber}`;
+        const details = cabinetDetails[key];
+        
+        if (details) {
+            // Correct GPS link format for Google Maps
+            const gpsLink = `https://www.google.com/maps/place/${details.lat},${details.lon}`;
+            const row = [
+                details.fullCode || "",
+                details.vendor || "",
+                details.model || "",
+                details.lon || "",
+                details.lat || "",
+                details.address || "",
+                gpsLink
+            ];
+            data.push(row);
+        }
+    });
+
+    if (data.length > 1) {
+        const ws = XLSX.utils.aoa_to_sheet(data);
+        
+        const headerStyle = {
+            font: { bold: true, color: { rgb: "FFFFFF" } },
+            fill: { fgColor: { rgb: "1E40AF" } }, // A professional dark blue
+            border: { top: { style: "thin" }, bottom: { style: "thin" }, left: { style: "thin" }, right: { style: "thin" } },
+            alignment: { horizontal: "center" }
+        };
+
+        const dataStyle = {
+            border: { top: { style: "thin" }, bottom: { style: "thin" }, left: { style: "thin" }, right: { style: "thin" } },
+            fill: { fgColor: { rgb: "F3F4F6" } } // A light gray
+        };
+
+        const cellRange = XLSX.utils.decode_range(ws['!ref']);
+        for (let C = cellRange.s.c; C <= cellRange.e.c; ++C) {
+            const cell = ws[XLSX.utils.encode_cell({ c: C, r: 0 })];
+            if (cell) {
+                cell.s = headerStyle;
+            }
+        }
+        
+        for (let R = cellRange.s.r + 1; R <= cellRange.e.r; ++R) {
+            for (let C = cellRange.s.c; C <= cellRange.e.c; ++C) {
+                const cell = ws[XLSX.utils.encode_cell({ c: C, r: R })];
+                if (cell) {
+                    cell.s = dataStyle;
+                }
+            }
+        }
+        
+        ws['!autofilter'] = { ref: "A1:G1" };
+        
+        const wscols = [
+            {wch: 15}, // Msan Code
+            {wch: 15}, // Vendor
+            {wch: 15}, // Model
+            {wch: 12}, // Long
+            {wch: 12}, // Lat
+            {wch: 30}, // Location
+            {wch: 40}  // GPS
+        ];
+        ws['!cols'] = wscols;
+
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "Cabinet Data");
+        XLSX.writeFile(wb, "cabinet_data.xlsx");
+        showNotification('تم تصدير البيانات بنجاح!', 'success');
+    } else {
+        showNotification('لا توجد بيانات متاحة للتصدير', 'error');
+    }
+}
+
+
 // Setup event listeners
 function setupEventListeners() {
     searchBtn.addEventListener('click', handleSearch);
     clearBtn.addEventListener('click', handleClear);
     backToLocationsBtn.addEventListener('click', backToLocationSelection);
+    exportExcelBtn.addEventListener('click', exportToExcel);
     
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
@@ -296,6 +494,16 @@ function setupEventListeners() {
                 handleClear();
             }
         }, 500);
+    });
+
+    // Event delegation for key slots
+    cabinetsGrid.addEventListener('click', (event) => {
+        const keySlot = event.target.closest('.key-slot');
+        if (keySlot && !keySlot.classList.contains('empty')) {
+            const keyNumber = keySlot.dataset.key;
+            const cabinetName = keySlot.dataset.cabinet;
+            showCabinetDetailsModal(cabinetName, keyNumber);
+        }
     });
 }
 
@@ -329,6 +537,12 @@ function handleSearch() {
         updateCabinetHighlights();
         updateSelectedKeysDisplay();
         updateCabinetStatus();
+        
+        if (validationResult.found.length > 0) {
+            exportExcelBtn.style.display = 'inline-flex';
+        } else {
+            exportExcelBtn.style.display = 'none';
+        }
         
         if (validationResult.notFound.length > 0) {
             showNotification(
@@ -400,6 +614,7 @@ function handleClear() {
     updateCabinetHighlights();
     updateCabinetStatus();
     hideSelectedKeysDisplay();
+    exportExcelBtn.style.display = 'none';
     showNotification('تم مسح البحث', 'info');
 }
 
@@ -415,6 +630,7 @@ function backToLocationSelection() {
     
     searchInput.value = '';
     hideSelectedKeysDisplay();
+    exportExcelBtn.style.display = 'none';
     
     showNotification('العودة لاختيار الموقع', 'info');
 }
@@ -500,18 +716,13 @@ function updateCabinetStatus() {
         
         if (!cabinetStatus) return;
         
-        if (highlightedKeys.size > 0) {
-            const foundInCabinet = cabinet.data.flat().filter(key => highlightedKeys.has(key)).length;
-            
-            if (foundInCabinet > 0) {
-                cabinetStatus.innerHTML = `
-                    <span class="status-text success">تم العثور</span>
-                `;
-            } else {
-                cabinetStatus.innerHTML = `
-                    <span class="status-text">جاهز</span>
-                `;
-            }
+        // Filter to count only the highlighted keys that are in the current cabinet's data
+        const foundKeysCount = cabinet.data.flat().filter(key => highlightedKeys.has(String(key)) || highlightedKeys.has(parseInt(key))).length;
+        
+        if (foundKeysCount > 0) {
+            cabinetStatus.innerHTML = `
+                <span class="status-text success">تم العثور (${foundKeysCount})</span>
+            `;
         } else {
             cabinetStatus.innerHTML = `
                 <span class="status-text">جاهز</span>
